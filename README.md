@@ -48,7 +48,8 @@ For deployment on platforms like render.com, refer to the official Render Deploy
 ## Contributing
 Contributions to enhance the AI Research Agent are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
 
-This repository is created to connect with render for API service and then output it into Notion Database.
+
 ![image](https://github.com/desaianm/research_agent/assets/46572436/d9f26e80-891d-4d4f-ac78-7db39bfcd826)
 
-
+# Flow Description
+This repository is dedicated to facilitating an automated workflow that meticulously monitors incoming emails for specified research topics. Upon detection, it initiates an HTTP request in response. The primary purpose of this automation is to seamlessly integrate with Render's API services, thereby streamlining the process of capturing and organizing the resultant data within a Notion database. This structured approach ensures a highly efficient and systematic management of information flow, from the initial email trigger to the final data storage.
