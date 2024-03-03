@@ -48,5 +48,7 @@ For deployment on platforms like render.com, refer to the official Render Deploy
 ## Contributing
 Contributions to enhance the AI Research Agent are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
 
+This repository is created to connect with render for API service and then output it into Notion Database.
+![image](https://github.com/desaianm/research_agent/assets/46572436/d9f26e80-891d-4d4f-ac78-7db39bfcd826)
 
 
