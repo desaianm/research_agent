@@ -138,6 +138,7 @@ system_message = SystemMessage(
             After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality  for each field mentioned?"
             If answer is yes, continue; But don't do this more than 3 iterations
             for benefits, search web to find job postings, company reviews, and other relevant information
+            final output should be a detailed report on the Who they are, company's leadership, culture, and benefits
 
 """
 )
