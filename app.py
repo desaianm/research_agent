@@ -135,8 +135,8 @@ system_message = SystemMessage(
             You should do enough research to gather as much information as possible about each sections
             You should scrape company's website,  company's About Us page, company's news, company's leadership, company's culture, company's benefits
             If there are url of relevant links & articles, you will scrape it to gather more information
-            After scraping & search, you should reason "Is there any new things i should search & scraping based on the data I collected to increase research quality  for each field mentioned?"
-            If answer is yes, continue; But don't do this more than 3 iterations
+            After scraping & search, you should rethink "Is there any new things i should search & scraping based on the data I collected to increase research quality  for each field mentioned?"
+            If answer is yes, continue; But don't do this more than 5 iterations
             for benefits, search web to find job postings, company reviews, and other relevant information
             final output should  in json and include each sections like Who they are, company's leadership, culture, and benefits
 
