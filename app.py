@@ -168,7 +168,7 @@ agent_kwargs = {
 
 llm = ChatOpenAI(temperature=0.5, model="gpt-4-0125-preview")
 memory = ConversationSummaryBufferMemory(
-    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
+    memory_key="memory", return_messages=True, llm=llm, max_token_limit=4000)
 
 agent = initialize_agent(
     tools,
