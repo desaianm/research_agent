@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain.prompts import PromptTemplate
 from langchain.agents import initialize_agent, Tool
 from langchain.agents import AgentType
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import MessagesPlaceholder
 from langchain.memory import ConversationSummaryBufferMemory
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -16,6 +16,7 @@ import requests
 import json
 from langchain.schema import SystemMessage
 from fastapi import FastAPI
+import streamlit as st
 
 load_dotenv()
 
@@ -65,7 +66,7 @@ def scrape_website(objective:str,url:str):
     else:
         print(f" HTTP request failed with code{response.status_code}")
 
-    if len(text) > 10000:
+    if len(text) > 4000:
         output = summmary(objective,text)
         return output
     else:
@@ -127,16 +128,19 @@ tools = [
 ]
 
 system_message = SystemMessage(
-    content="""You are a world class researcher, who can do detailed research on any topic and produce facts based results; 
+    content="""You are a world class researcher, who can do detailed research on any company and create a detailed report on the company's leadership, culture, and benefits.; 
             you do not make things up, you will try as hard as possible to gather facts & data to back up the research
             
-            Please make sure you complete the objective above with the following rules:
-            1/ You should do enough research to gather as much information as possible about the objective
-            2/ If there are url of relevant links & articles, you will scrape it to gather more information
-            3/ After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality?" If answer is yes, continue; But don't do this more than 3 iteratins
-            4/ You should not make things up, you should only write facts & data that you have gathered
-            5/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
-            6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
+            Divide research into each section: Who they are, Culture, about Company Leadership, Culture of Company and Benefits of working at the company 
+            You should do enough research to gather as much information as possible about the objective
+            You should scrape company's website,  company's About Us page, company's news, company's leadership, company's culture, company's benefits
+            If there are url of relevant links & articles, you will scrape it to gather more information
+            After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality  for each field mentioned?"
+            If answer is yes, continue; But don't do this more than 3 iterations
+            for benefits, search web to find job postings, company reviews, and other relevant information
+            Final output should be a json file with headers as the sections and the content as the data
+
+"""
 )
 
 agent_kwargs = {
