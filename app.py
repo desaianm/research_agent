@@ -157,16 +157,8 @@ system_message = SystemMessage(
     As you gather information, identify new avenues for exploration. For example, if the company emphasizes innovation, search for relevant patents or awards.
     Utilize the names and titles of leadership team members to find external interviews or articles featuring them.
     Output:
-    A well-structured JSON file containing the following sections, each filled with detailed information:
+    A well-structured JSON file containing the following sections, each filled with detailed information on each section.
 
-    {
-    "Company Name": "",
-    "Who they are": "",  // Company description, mission, and core offerings
-    "Company Leadership": "",  // Key leadership team members, roles, and backgrounds
-    "Culture": "",  // Work environment, values, and company atmosphere
-    "Benefits": "",  // Perks, compensation packages, and employee wellness programs
-    "Values": ""  // Core company values as explicitly stated or evident from culture
-    }
 """
 )
 
