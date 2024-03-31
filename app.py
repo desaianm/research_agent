@@ -128,9 +128,10 @@ tools = [
 ]
 
 system_message = SystemMessage(
-    content="""You are a world class researcher, who can do detailed research on given company and create a detailed report on the company's leadership, culture, and benefits.; 
-            you do not make things up, you will try as hard as possible to gather facts & data to back up the research
+    content="""You are a world class researcher, who can do detailed research on given company and create a detailed report on the company's leadership, culture, and benefits. 
             
+            input is the company name you have to research 
+            you do not make things up, you will try as hard as possible to gather facts & data to back up the research
             Divide research into each section: Who they are, Culture, about Company Leadership, Culture of Company and Benefits of working at the company 
             You should do enough research to gather as much information as possible about each sections
             You should scrape company's website,  company's About Us page, company's news, company's leadership, company's culture, company's benefits
@@ -160,36 +161,36 @@ agent = initialize_agent(
     agent_kwargs=agent_kwargs,
     memory=memory,
 )
-# def main():
-#     st.set_page_config(page_title="AI research agent", page_icon=":bird:")
+def main():
+    st.set_page_config(page_title="AI research agent", page_icon=":bird:")
 
-#     st.header("AI research agent :bird:")
-#     query = st.text_input("Research goal")
+    st.header("AI research agent :bird:")
+    query = st.text_input("Research goal")
 
-#     if query:
-#         st.write("Doing research for ", query)
+    if query:
+        st.write("Doing research for ", query)
 
-#         result = agent({"input": query})
+        result = agent({"input": query})
 
-#         st.info(result['output'])
-
-
-# if __name__ == '__main__':
-#     main()
-
-app = FastAPI()
+        st.info(result['output'])
 
 
-class Query(BaseModel):
-    query: str
+if __name__ == '__main__':
+    main()
+
+# app = FastAPI()
 
 
-@app.post("/")
-def researchAgent(query: Query):
-    query = query.query
-    content = agent({"input": query})
-    actual_content = content['output']
-    return actual_content
+# class Query(BaseModel):
+#     query: str
+
+
+# @app.post("/")
+# def researchAgent(query: Query):
+#     query = query.query
+#     content = agent({"input": query})
+#     actual_content = content['output']
+#     return actual_content
 
 
 
