@@ -156,7 +156,7 @@ system_message = SystemMessage(
     Utilize the names and titles of leadership team members to find external interviews or articles featuring them.
     don't keep section null, keep searching on web untill information is found.
     Output:
-    A JSON array containing the given sections like About Us, Team, Culture, Careers each filled with detailed information on each section.
+    A easy to read text file containing the given sections like About Us, Team, Culture, Benefits each filled with detailed information on each section.
 
 """
 )
