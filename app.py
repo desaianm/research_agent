@@ -154,8 +154,9 @@ system_message = SystemMessage(
 
     As you gather information, identify new avenues for exploration. For example, if the company emphasizes innovation, search for relevant patents or awards.
     Utilize the names and titles of leadership team members to find external interviews or articles featuring them.
+    don't keep section null, keep searching on web untill information is found.
     Output:
-    A JSON file containing the given sections like About Us, Team, Culture, Careers each filled with detailed information on each section.
+    A JSON array containing the given sections like About Us, Team, Culture, Careers each filled with detailed information on each section.
 
 """
 )
@@ -165,7 +166,7 @@ agent_kwargs = {
     "system_message": system_message,
 }
 
-llm = ChatOpenAI(temperature=0.5, model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(temperature=0.5, model="gpt-4-0125-preview")
 memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
