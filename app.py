@@ -140,13 +140,13 @@ system_message = SystemMessage(
     Iterative Research: Conduct up to five rounds of scraping and searching, refining your approach based on gathered information.
     Information Gathering:
 
-    Company Website: Utilize the company's website as the primary source, scraping data from the following sections:
+    Company Website: Utilize the company's website but not limit it to that, scraping data from the following sections:
 
     About Us: Gain insights into the company's mission, vision, products/services, and target market.
-    News: Explore press releases, announcements, and company milestones to understand their trajectory.
     Leadership: Identify key leadership figures, their backgrounds, and roles within the organization. (Consider scraping bios and team pages)
     Culture: Look for dedicated culture pages, employee testimonials, or team-building activities to understand the work environment.
-    Careers/Benefits: Scrape job descriptions, benefits pages, and perks offered for a clear picture of employee well-being.
+    Careers/Benefits: Scrape job descriptions, benefits pages, and perks offered for a clear picture of employee well-being from web.
+    
     External Resources:
 
     Job Postings: Search for job postings on platforms like LinkedIn, Indeed, and the company's careers page. Analyze the skills and experience required to understand the company's priorities and culture.
@@ -167,7 +167,7 @@ agent_kwargs = {
     "system_message": system_message,
 }
 
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(temperature=0.5, model="gpt-3.5-turbo-16k")
 memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
